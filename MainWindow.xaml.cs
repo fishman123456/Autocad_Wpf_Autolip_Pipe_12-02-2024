@@ -94,5 +94,12 @@ namespace Autocad_Wpf_Autolip_Pipe_12_02_2024
             list_lay_name.Clear();
             sb.Clear();
         }
+
+        private void Button_Help_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("В диаметры пишем с точкой," + "\n"
+                + "в имя слоя нужны английские буквы" , 
+                "Приложение разработано на C#, собирает файл *.lisp");
+        }
     }
 }
