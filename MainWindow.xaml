@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Autocad_Wpf_Autolip_Pipe_12_02_2024"
         mc:Ignorable="d"
-        Title="Трубные блоки 12-02-2024" Height="600" Width="400">
+        Title="Трубные блоки 12-02-2024" Height="600" Width="400" WindowStartupLocation="CenterScreen" Cursor="">
     <Grid>
         <Grid.ColumnDefinitions>
-           
+
             <ColumnDefinition Width="100*"/>
             <ColumnDefinition Width="100*"/>
 
@@ -29,10 +29,22 @@
         </Grid.RowDefinitions>
         <!-- текстбоксы для ввода данных  -->
         <TextBox Name="TextBox_Lay_name" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="1" Margin="10"
-              AcceptsReturn="True"  VerticalScrollBarVisibility="Auto" />
+              AcceptsReturn="True"  VerticalScrollBarVisibility="Auto" FontSize="14" Cursor="IBeam">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
 
         <TextBox Name="TextBox_Pipe_Diam" Grid.Row="1" Grid.Column="1" Grid.RowSpan="7" Grid.ColumnSpan="1" Margin="10"
-              AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+              AcceptsReturn="True" VerticalScrollBarVisibility="Auto"  FontSize="14" Cursor="IBeam">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
 
         <TextBlock x:Name="TextBlock_Layer_name" TextWrapping="Wrap" Text="Имя слоя" Grid.ColumnSpan="1" 
            HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Grid.Column="0"/>
@@ -40,16 +52,43 @@
         <TextBlock x:Name="TextBlock_Pipe_Diam" TextWrapping="Wrap" Text="Диаметр кабеля" Grid.ColumnSpan="1" 
            HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Grid.Column="1"/>
 
+
+
+
         <Button Name="Button_Clear_Lay_name" Content="Очистить имя слоя" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="1"
-         Margin="10" Click="Button_Clear_Lay_name_Click" />
-
+         Margin="10" Click="Button_Clear_Lay_name_Click" Cursor="Hand">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
         <Button Name="Button_Clear_Pipe_Diam" Content="Очистить диаметры" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="1"
-         Margin="10" Click="Button_Clear_Pipe_Diam_Click"/>
-        <Button Name="Button_Help" Content="Помощь" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2"
-         Margin="10" Click="Button_Help_Click" />
-        <Button Name="Button_Save_as" Content="Сохранить как" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"
-         Margin="10" Click="Button_Save_as_Click"/>
+         Margin="10" Click="Button_Clear_Pipe_Diam_Click" Cursor="Hand">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
 
-       
+
+        <Button Name="Button_Help" Content="Помощь" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2"
+         Margin="10" Click="Button_Help_Click" Cursor="Help">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button Name="Button_Save_as" Content="Сохранить как" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"
+         Margin="10" Click="Button_Save_as_Click" Cursor="Hand">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>
