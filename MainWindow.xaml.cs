@@ -45,17 +45,17 @@ namespace Autocad_Wpf_Autolip_Pipe_12_02_2024
             // расделителем может служить один символ, поэтому строку создаём, т е массив символов
             string[] separator = { "\n", "\r" };
             // добавляем данные в список из текстбокса TextBox_Lay_name 
-            string[] mass_textBox_Lay_name = TextBox_Lay_name.Text.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+            string[] mass_Lay_name = TextBox_Lay_name.Text.Split(separator, StringSplitOptions.RemoveEmptyEntries);
             // добавляем данные в список из текстбокса TextBox_Block_name
             string[] mass_diam_cable = TextBox_Pipe_Diam.Text.Split(separator, StringSplitOptions.RemoveEmptyEntries);
             int count = 0;
 
             try
             {
-                foreach (var item in mass_textBox_Lay_name)
+                foreach (var item in mass_Lay_name)
                 {     
                     list_pipe_Diam.Add(mass_diam_cable[count]);
-                    list_lay_name.Add(mass_textBox_Lay_name[count]);
+                    list_lay_name.Add(mass_Lay_name[count]);
                     count++;
                 }
                 // собираем lisp
@@ -88,6 +88,11 @@ namespace Autocad_Wpf_Autolip_Pipe_12_02_2024
             }
            
             SaveFile.saveFileMetod(sb.ToString());
+            Array.Clear(mass_diam_cable, 0, mass_diam_cable.Length);
+            Array.Clear(mass_Lay_name, 0, mass_Lay_name.Length);
+            list_pipe_Diam.Clear();
+            list_lay_name.Clear();
+            sb.Clear();
         }
     }
 }

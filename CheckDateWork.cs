@@ -20,11 +20,12 @@ namespace Autocad_Wpf_Autolip_Pipe_12_02_2024
             DateTime dt2 = DateTime.Parse("20/03/2024");
             if (dt1.Date > dt2.Date)
             {
-                MessageBox.Show("Your Application is Expire");
+                MessageBox.Show("Time is over 20/03/2024");
                 // Выход из проложения добавил 01-01-2024. Чтобы порядок был....
                 var mainWindow = (Application.Current.MainWindow as MainWindow);
                 if (mainWindow != null)
                 {
+                    
                     mainWindow.Close();
                 }
             }
